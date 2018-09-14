@@ -86,11 +86,11 @@ class TestPetShop < Minitest::Test
   # double underline helps show it's the same function but a different test.
   # this test calls another, already tested function
   # once a function passes a test, it can be used in a subsequent test - remember though that they run at random
-  # def test_add_or_remove_cash__add
-  #   add_or_remove_cash(@pet_shop,10)
-  #   cash = total_cash(@pet_shop)
-  #   assert_equal(1010, cash)
-  # end
+  def test_add_or_remove_cash__add
+    add_or_remove_cash(@pet_shop,10)
+    cash = total_cash(@pet_shop)
+    assert_equal(1010, cash)
+  end
 
   # def test_add_or_remove_cash__remove
   #   add_or_remove_cash(@pet_shop,-10)
