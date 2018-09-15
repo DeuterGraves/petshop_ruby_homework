@@ -54,3 +54,7 @@ def remove_pet_by_name(shops, searched_name)
   pet = find_pet_by_name(shops, searched_name)
   shops[:pets].delete(pet)
 end
+
+def add_pet_to_stock(shops, new_pet)
+  shops[:pets].push(new_pet)
+end

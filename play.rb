@@ -108,14 +108,25 @@
   #
   # p find_pet_by_name(@pet_shop, "Arthur")
 
-  def find_pet_by_name(shops, searched_name)
-    #search_result = {}
-    for pet in shops[:pets]
-      if pet[:name] == searched_name
-        return pet
-      end
-    end
-    return nil
-  end
+  # def find_pet_by_name(shops, searched_name)
+  #   #search_result = {}
+  #   for pet in shops[:pets]
+  #     if pet[:name] == searched_name
+  #       return pet
+  #     end
+  #   end
+  #   return nil
+  # end
+  #
+  # p find_pet_by_name(@pet_shop, "Sir Percy")
 
-  p find_pet_by_name(@pet_shop, "Sir Percy")
+
+  # def add_pet_to_stock(shops, new_pet)
+  #   shops[:pets].push(new_pet)
+  # end
+  #
+  # add_pet_to_stock(@pet_shop, @new_pet)
+  # for pet in @pet_shop[:pets]
+  #   p pet
+  #   p ""
+  # end
