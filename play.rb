@@ -109,7 +109,7 @@
   # p find_pet_by_name(@pet_shop, "Arthur")
 
   def find_pet_by_name(shops, searched_name)
-    search_result = {}
+    #search_result = {}
     for pet in shops[:pets]
       if pet[:name] == searched_name
         return pet

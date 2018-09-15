@@ -33,11 +33,21 @@ def pets_by_breed(shops, searched_breed)
 end
 
 def find_pet_by_name(shops, searched_name)
-  search_result = {}
+  #search_result = {}
   for pet in shops[:pets]
     if pet[:name] == searched_name
       return pet
     end
   end
   return nil
+end
+
+def remove_pet_by_name(shops, searched_name)
+
+  for pet in shops[:pets]
+    if pet[:name] == searched_name
+      shops[:pets].delete(pet)
+    end
+  end
+
 end
