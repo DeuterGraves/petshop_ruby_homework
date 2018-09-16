@@ -67,6 +67,7 @@ class TestPetShop < Minitest::Test
       ],
       admin: {
         total_cash: 1000,
+        #if this became an array, you could sell more than one pet at once by adding the pets sold to the array and counting the legnth of the array for the value of how many pets were sold.  Maybe I overlooked something.
         pets_sold: 0,
       },
       name: "Camelot of Pets"
@@ -183,26 +184,26 @@ class TestPetShop < Minitest::Test
     assert_equal(true, can_buy_pet)
   end
 
-  # #These are 'integration' tests so we want multiple asserts.
-  # #If one fails the entire test should fail
-  # def test_sell_pet_to_customer__pet_found
-  #   customer = @customers[0]
-  #   pet = find_pet_by_name(@pet_shop,"Arthur")
+  #These are 'integration' tests so we want multiple asserts.
+  #If one fails the entire test should fail
+  def test_sell_pet_to_customer__pet_found
+    customer = @customers[0]
+    pet = find_pet_by_name(@pet_shop,"Arthur")
 
-  #   sell_pet_to_customer(@pet_shop, pet, customer)
+    sell_pet_to_customer(@pet_shop, pet, customer)
 
-  #   assert_equal(1, customer_pet_count(customer))
-  #   assert_equal(1, pets_sold(@pet_shop))
-  #   assert_equal(100, customer_cash(customer))
-  #   assert_equal(1900, total_cash(@pet_shop))
-  # end
+    assert_equal(1, customer_pet_count(customer))
+    assert_equal(1, pets_sold(@pet_shop))
+    assert_equal(100, customer_cash(customer))
+    assert_equal(1900, total_cash(@pet_shop))
+  end
 
   # def test_sell_pet_to_customer__pet_not_found
   #   customer = @customers[0]
   #   pet = find_pet_by_name(@pet_shop,"Dave")
-
+  #
   #   sell_pet_to_customer(@pet_shop, pet, customer)
-
+  #
   #   assert_equal(0, customer_pet_count(customer))
   #   assert_equal(0, pets_sold(@pet_shop))
   #   assert_equal(1000, customer_cash(customer))

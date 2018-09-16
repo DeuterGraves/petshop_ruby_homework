@@ -1,25 +1,25 @@
-def pet_shop_name (shop)
-  shop[:name]
+def pet_shop_name(shops)
+  shops[:name]
 end
 
-def total_cash(shop)
-  shop[:admin][:total_cash]
+def total_cash(shops)
+  shops[:admin][:total_cash]
 end
 
-def add_or_remove_cash(shop, amount)
-  shop[:admin][:total_cash] += amount
+def add_or_remove_cash(shops, amount)
+  shops[:admin][:total_cash] += amount
 end
 
-def pets_sold(shop)
-  shop[:admin][:pets_sold]
+def pets_sold(shops)
+  shops[:admin][:pets_sold]
 end
 
-def increase_pets_sold(shop, new_sales)
-  shop[:admin][:pets_sold] += new_sales
+def increase_pets_sold(shops, new_sales)
+  shops[:admin][:pets_sold] += new_sales
 end
 
-def stock_count(shop)
-  shop[:pets].length
+def stock_count(shops)
+  shops[:pets].length
 end
 
 def pets_by_breed(shops, searched_breed)
@@ -41,6 +41,7 @@ def find_pet_by_name(shops, searched_name)
   end
   return nil
 end
+
 
 # def remove_pet_by_name(shops, searched_name)
 #   for pet in shops[:pets]
@@ -81,4 +82,23 @@ def customer_can_afford_pet(customer, pet)
   else
     return false
   end
+end
+
+def pet_price(shops, pet)
+  # i got errors when I tried to create a variable within this function - possibly because originally the variables had differet names? pet v searched_name?
+  #appears I was over complicating things.
+  #pet = find_pet_by_name(shops, pet)
+  #find_pet_by_name(shops, pet)
+  pet[:price]
+end
+
+def sell_pet_to_customer(shops, pet, customer)
+  find_pet_by_name(@shops, pet)
+  amount = pet_price(shops, pet)
+  add_pet_to_customer(customer, pet)
+  #feels like a cheat to hard code to 1?
+  increase_pets_sold(shops, 1)
+  remove_customer_cash(customer, amount)
+  add_or_remove_cash(shops, amount)
+
 end
