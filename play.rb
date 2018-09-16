@@ -242,28 +242,34 @@
   #   # customer_cash(customer)
   #   # total_cash(shops)
   # end
-  p "before running the sale"
-  p customer_pet_count(@customers[0])
-  p pets_sold(@pet_shop)
-  p customer_cash(@customers[0])
-  p total_cash(@pet_shop)
-  p find_pet_by_name(@pet_shop, "Dave")#[:price]
+
+  # p "before running the sale"
+  # p customer_pet_count(@customers[0])
+  # p pets_sold(@pet_shop)
+  # p customer_cash(@customers[0])
+  # p total_cash(@pet_shop)
+  # p find_pet_by_name(@pet_shop, "Dave")#[:price]
+  # p find_pet_by_name(@pet_shop, "Arthur")
 
 
-  def sell_pet_to_customer(shops, pet, customer)
-  if find_pet_by_name(shops, pet) == nil
-    return "computer says no"
-  else
-    #find_pet_by_name(shops, pet)
-    amount = pet_price(shops, pet)
-    add_pet_to_customer(customer, pet)
-    #feels like a cheat to hard code to 1?
-    increase_pets_sold(shops, 1)
-    remove_customer_cash(customer, amount)
-    add_or_remove_cash(shops, amount)
-  end
-end
-
+  # def sell_pet_to_customer(shops, pet, customer)
+  #   if find_pet_by_name(shops, pet) == nil
+  #     return "computer says no"
+  #   elsif pet_price(shops, pet) > customer_cash(customer)
+  #
+  #     #insuffient funds --
+  #     return "wallet says no"
+  #   else
+  #     #find_pet_by_name(shops, pet)
+  #     amount = pet_price(shops, pet)
+  #     add_pet_to_customer(customer, pet)
+  #     #feels like a cheat to hard code to 1?
+  #     increase_pets_sold(shops, 1)
+  #     remove_customer_cash(customer, amount)
+  #     add_or_remove_cash(shops, amount)
+  #   end
+  # end
+  #
   # sell_pet_to_customer(@pet_shop, "Arthur", @customers[0])
   #
   # p "after running the sale"
@@ -277,10 +283,14 @@ end
   # p sell_pet_to_customer(@pet_shop, "Dave", @customers[1])
 
 
-  p sell_pet_to_customer(@pet_shop, "Arthur", @customers[1])
+  # p sell_pet_to_customer(@pet_shop, "Arthur", @customers[1])
 
-  p "insuffient funds"
-p customer_pet_count(@customers[1])
-p pets_sold(@pet_shop)
-p customer_cash(@customers[1])
-p total_cash(@pet_shop)
+#   p "insuffient funds"
+# p customer_pet_count(@customers[1])
+# p pets_sold(@pet_shop)
+# p customer_cash(@customers[1])
+# p total_cash(@pet_shop)
+
+p customer_can_afford_pet(@customers[1], @new_pet)
+
+p customer_can_afford_pet(@customers[0], "Sir Percy")
