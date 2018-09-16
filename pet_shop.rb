@@ -93,7 +93,7 @@ def pet_price(shops, pet)
 end
 
 def sell_pet_to_customer(shops, pet, customer)
-  find_pet_by_name(@shops, pet)
+  find_pet_by_name(shops, pet)
   amount = pet_price(shops, pet)
   add_pet_to_customer(customer, pet)
   #feels like a cheat to hard code to 1?
