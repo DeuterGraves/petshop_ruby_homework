@@ -93,12 +93,17 @@ def pet_price(shops, pet)
 end
 
 def sell_pet_to_customer(shops, pet, customer)
-  find_pet_by_name(shops, pet)
+if find_pet_by_name(shops, pet) == nil
+  return "computer says no"
+else
+  #find_pet_by_name(shops, pet)
   amount = pet_price(shops, pet)
   add_pet_to_customer(customer, pet)
   #feels like a cheat to hard code to 1?
   increase_pets_sold(shops, 1)
   remove_customer_cash(customer, amount)
   add_or_remove_cash(shops, amount)
+end
+
 
 end

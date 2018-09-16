@@ -223,30 +223,55 @@
   end
 
 
+  # def sell_pet_to_customer(shops, pet, customer)
+  #   amount = pet_price(shops, pet)
+  #   add_pet_to_customer(customer, pet)
+  #   #shops[:admin][:pets_sold] += 1
+  #   increase_pets_sold(shops, 1)
+  #   #find the pet and then get the price, take that as a variable and pass it forward to change amounts
+  #   remove_customer_cash(customer, amount)
+  #   add_or_remove_cash(shops, amount)
+  #   #remove_pet_by_name(shops, pet)
+  #   # add pet name to customer's pet name array
+  #   #amount =
+  #
+  #   #amount = pet[:price]
+  #   #remove_customer_cash(customer, amount)
+  #   # customer_pet_count(customer)
+  #   # pets_sold(shops)
+  #   # customer_cash(customer)
+  #   # total_cash(shops)
+  # end
+  p "before running the sale"
+  p customer_pet_count(@customers[0])
+  p pets_sold(@pet_shop)
+  p customer_cash(@customers[0])
+  p total_cash(@pet_shop)
+  p find_pet_by_name(@pet_shop, "Dave")#[:price]
+
+
   def sell_pet_to_customer(shops, pet, customer)
+  if find_pet_by_name(shops, pet) == nil
+    return "computer says no"
+  else
+    #find_pet_by_name(shops, pet)
     amount = pet_price(shops, pet)
     add_pet_to_customer(customer, pet)
-    #shops[:admin][:pets_sold] += 1
+    #feels like a cheat to hard code to 1?
     increase_pets_sold(shops, 1)
-    #find the pet and then get the price, take that as a variable and pass it forward to change amounts
     remove_customer_cash(customer, amount)
     add_or_remove_cash(shops, amount)
-    #remove_pet_by_name(shops, pet)
-    # add pet name to customer's pet name array
-    #amount =
-
-    #amount = pet[:price]
-    #remove_customer_cash(customer, amount)
-    # customer_pet_count(customer)
-    # pets_sold(shops)
-    # customer_cash(customer)
-    # total_cash(shops)
   end
+end
 
   sell_pet_to_customer(@pet_shop, "Arthur", @customers[0])
+
+  p "after running the sale"
 
   p customer_pet_count(@customers[0])
   p pets_sold(@pet_shop)
   p customer_cash(@customers[0])
   p total_cash(@pet_shop)
-  p find_pet_by_name(@pet_shop, "Arthur")[:price]
+  p find_pet_by_name(@pet_shop, "Dave")#[:price]
+
+  p sell_pet_to_customer(@pet_shop, "Dave", @customers[1])
