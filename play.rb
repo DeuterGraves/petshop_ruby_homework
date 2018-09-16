@@ -264,14 +264,23 @@
   end
 end
 
-  sell_pet_to_customer(@pet_shop, "Arthur", @customers[0])
+  # sell_pet_to_customer(@pet_shop, "Arthur", @customers[0])
+  #
+  # p "after running the sale"
+  #
+  # p customer_pet_count(@customers[0])
+  # p pets_sold(@pet_shop)
+  # p customer_cash(@customers[0])
+  # p total_cash(@pet_shop)
+  # p find_pet_by_name(@pet_shop, "Dave")#[:price]
+  #
+  # p sell_pet_to_customer(@pet_shop, "Dave", @customers[1])
 
-  p "after running the sale"
 
-  p customer_pet_count(@customers[0])
-  p pets_sold(@pet_shop)
-  p customer_cash(@customers[0])
-  p total_cash(@pet_shop)
-  p find_pet_by_name(@pet_shop, "Dave")#[:price]
+  p sell_pet_to_customer(@pet_shop, "Arthur", @customers[1])
 
-  p sell_pet_to_customer(@pet_shop, "Dave", @customers[1])
+  p "insuffient funds"
+p customer_pet_count(@customers[1])
+p pets_sold(@pet_shop)
+p customer_cash(@customers[1])
+p total_cash(@pet_shop)
